@@ -18,6 +18,7 @@
   <header class="top">
     <h1 id="title">Books</h1>
     <span id="count" class="count"></span>
+    <span id="sync" class="sync" role="status" aria-live="polite"></span>
   </header>
 
   <main>
@@ -54,6 +55,16 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
     </button>
   </nav>
+
+  <div id="lock" class="lock" hidden>
+    <form id="lock-form" class="lock-card" autocomplete="on">
+      <h2>The List</h2>
+      <p>Enter your passcode to sync your lists.</p>
+      <input id="lock-input" type="password" name="password" autocomplete="current-password" placeholder="Passcode" aria-label="Passcode" enterkeyhint="go">
+      <p id="lock-error" class="lock-error" hidden></p>
+      <button type="submit">Unlock</button>
+    </form>
+  </div>
 
   <script src="app.js"></script>
 </body>
