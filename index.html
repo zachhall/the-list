@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111214" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f6f5f2" media="(prefers-color-scheme: light)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="The List">
+  <title>The List</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <h1 id="title">Books</h1>
+    <span id="count" class="count"></span>
+  </header>
+
+  <main>
+    <form id="add-form" class="add" autocomplete="off">
+      <input id="add-input" type="text" placeholder="Add a book" aria-label="New item" enterkeyhint="done">
+      <button type="submit" aria-label="Add item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+      </button>
+    </form>
+
+    <ul id="active" class="list" aria-label="To do"></ul>
+    <p id="empty" class="empty" hidden>Nothing here yet.</p>
+
+    <details id="done-wrap" class="done" hidden>
+      <summary>Completed <span id="done-count"></span></summary>
+      <ul id="done" class="list" aria-label="Completed"></ul>
+    </details>
+  </main>
+
+  <nav class="tabs" aria-label="Categories">
+    <button data-cat="books" aria-label="Books" title="Books">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v15H6.5A2.5 2.5 0 0 0 4 19.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>
+    </button>
+    <button data-cat="comics" aria-label="Comics" title="Comics">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-4.6A8.4 8.4 0 0 1 3 11.5 8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 9 8.5z"/><path d="M13 7l-3 5h4l-3 5"/></svg>
+    </button>
+    <button data-cat="movies" aria-label="Movies" title="Movies">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M7 3v18M17 3v18M2 8h5M2 12h20M2 16h5M17 8h5M17 16h5"/></svg>
+    </button>
+    <button data-cat="shows" aria-label="Shows" title="Shows">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M17 2l-5 5-5-5"/></svg>
+    </button>
+    <button data-cat="albums" aria-label="Albums" title="Albums">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+    </button>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
